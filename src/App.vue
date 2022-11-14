@@ -40,17 +40,23 @@ export default {
   },
   methods: {
     start() {
-      console.log("start timer")
+      console.log("start timer");
     },
+    
     stop() {
       console.log("stop timer");
     },
+
     clockRunning() {
       console.log("clock running: ", this.time);
     },
 
-    zeroPrefix(num, digit) {
-     console.log("zero prefix")
+    formatNumber(val, noOfDigits) {
+      let zero = "";
+      for (let i = 0; i < noOfDigits; i++) {
+        zero += "0";
+      }
+      return (zero + val).slice(-noOfDigits);
     },
   },
 }
